@@ -11,6 +11,8 @@ function main() {
             socket.emit("send message", val);
         }
     }
+
+
     function handleRemove(evt){
         socket.emit("send message");
     }
@@ -26,9 +28,15 @@ function main() {
         input.value = "";
 }
 
+function handleRost(msg){
+ 
+    
+    
+}
+
 
 socket.on('display message', handleMessage);
-socket.on('mi ban gri', handleRost);
+socket.on('mi ban gri ', handleRost);
 } // main closing bracket
 
 window.onload = main;
