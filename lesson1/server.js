@@ -8,18 +8,18 @@ app.use(express.static("."));
 app.get('/', function (req, res) {
    res.redirect('index.html');
 });
-server.listen(3000);
+server.listen(8080);
 
 io.on('connection', function (socket) {
     for(var i in messages) {
       io.sockets.emit("display message", messages[i]);
-    }
+    } 
     socket.on("send message", function (data) {
         messages.push(data);
         io.sockets.emit("display message", data);
     });
-    socket.on("remove message", function () {
+    socket.on("uzumem jnejem", function () {
         messages = [];
-        io.sockets.emit("mi ban gri");
+        io.sockets.emit("de dzer motic jnjeq");
  });
 });
